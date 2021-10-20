@@ -25,11 +25,21 @@ var printName = function (params) {
 }
 
 //console.log(MyHoistedVar) : error : MyHoistedVar is not defined 
+var index = undefined;
 
-for (var index = 0; index < 5; index++) {
-        setTimeout(() => {
-            console.log("index " +index)
-        }, 1000);        
+for (index = 0; index < 5; index++) {
+
+        //delayed execution - and
+        // setTimeout(function(){ //callback function
+        //     console.log("index " +index)
+        // }, 1000);  //millisecond to wait      
+
+        //we'll evaluate the values by using IIFE, so that scope is not resolved later
+        (function (i) {
+            setTimeout(function(){ //callback function
+                console.log("index " +i)
+            }, 1000);
+        })(index) //event loop
 }
 
-console.log("index " +index)
+console.log("index " + index)
