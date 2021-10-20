@@ -27,7 +27,7 @@ var printName = function (params) {
 //console.log(MyHoistedVar) : error : MyHoistedVar is not defined 
 
 for (var index = 0; index < 5; index++) {
-        setTimeout((index) => {
+        setTimeout(() => {
             console.log("index " +index)
         }, 1000);        
 }
