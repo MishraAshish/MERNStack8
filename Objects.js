@@ -65,3 +65,8 @@ console.log(nullProtoype.__proto__)
 var emptyProtoype =  Object.create({});
 
 console.log(emptyProtoype.__proto__)
+
+
+// create a student object with details like - name, address, mobile, method - getName, getAddress
+// override it with college student put some new properties like college etc, new method to return college and override getAddress
+// give me example of no-prototype and merging of objects each.
