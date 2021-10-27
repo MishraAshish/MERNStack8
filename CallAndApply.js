@@ -44,17 +44,6 @@ GetVehicleInfo.apply(SomeCar, ["Yes","5","4","Yes","China"])
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // setTimeout(function (){
 //     console.log("this - ", this)
 // }, 1000); //waiting time in milliseconds
@@ -71,3 +60,10 @@ GetVehicleInfo.apply(SomeCar, ["Yes","5","4","Yes","China"])
 //     }
 // }
 // User.getName()
+
+
+
+// Namrata - Basics, Operators, Hoisting, DataTypes
+// Ciara - Literals, Objects, FunctionsAsClass
+// Cynthia - Functions, Overloading, CallBackAndNesting 
+// Wei - Closures, CallAndApply
