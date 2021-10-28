@@ -32,3 +32,26 @@ console.log(parentObj("Somewhere on earth", false))
 
 // pass the isAdmin and depending upon true or false : if true then return pin and amount as well
 // create a closure with an example of person being parent and student being child
+
+function AccountParent(name, accountNum) {
+    var AccountName = name; //public
+    var AccountNumber = accountNum; //public
+    var AccBal = "$20000" //
+    var AccPin = "54sa5d4as" //private
+
+
+    var ChildAcc = function (AccType, isAdmin) {
+        return {
+            AccountName, //short hand - AccountNumber : AccountNumber,
+            AccountNumber,
+            AccType,
+            AccBal
+        }
+    }
+
+    return ChildAcc;
+}
+
+var parentObj = AccountParent("Padmaja", "5156565656")
+
+console.log(parentObj("Savings", true))

@@ -19,6 +19,22 @@ function GetAddress(callBack, param, param2, param3) {
 
 GetAddress(Print, "Somewhere on earth", "Besides a sea", "under the sky")
 
+///////////////////
+
+function GetName(name) {
+  return name;
+}
+
+function GetAddress(add) {
+  return add;
+}
+
+function PrintName(callBk, param) {
+  console.log(callBk(param))
+}
+
+PrintName(GetName, "Estben")
+PrintName(GetAddress, "Somewhere on earth")
 
 
 

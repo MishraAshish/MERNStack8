@@ -12,5 +12,6 @@ if (validCitizen && age === "18") { //== compares values only but === compares t
     console.log("Not Allowed to vote")
 }
 
+
 //ternary operators
 validCitizen && age === "18" ?console.log("Allowed to vote ternary") : console.log("Not Allowed to vote ternary");

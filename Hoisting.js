@@ -43,3 +43,22 @@ for (index = 0; index < 5; index++) {
 }
 
 console.log("index " + index)
+
+
+// console.log(myname) //undefined
+// console.log(somename()) //hoisted with definition
+// console.log(otherName) // undefined 
+
+// var myname = "your name";
+// console.log(myname)
+
+// function somename(params) {
+//     // it should be pure function
+//     return "Some Value"
+// }
+
+// //function expression
+
+// var otherName = function (params) {
+//     return "Other Value"
+// }

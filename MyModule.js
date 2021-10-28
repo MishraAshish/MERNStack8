@@ -17,4 +17,11 @@ var Account = {
     }
 }
 
-module.exports = Student;
+
+//Add a Session Object and export the same from here then print Session details in usingmodule file
+
+
+module.exports = {
+    Student,
+    Account
+}

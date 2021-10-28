@@ -70,3 +70,23 @@ console.log(emptyProtoype.__proto__)
 // create a student object with details like - name, address, mobile, method - getName, getAddress
 // override it with college student put some new properties like college etc, new method to return college and override getAddress
 // give me example of no-prototype and merging of objects each.
+
+
+var Person = {
+    name : "Person I am",
+    age : 25,
+    getPersonDetail : function () {
+        return ` Name ${this.name} Age ${this.age}`
+    }
+}
+
+//console.log(Person.getPersonDetail())
+
+var Student = Object.create(Person);
+Student.Address = "Somewhere on earth";
+Student.getAddress = function () {
+    console.log(this.Address)
+}
+
+console.log(Student.getPersonDetail());
+Student.getAddress();

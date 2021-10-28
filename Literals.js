@@ -9,6 +9,7 @@
 // var age2 = 21;
 // var address2 = "Somewhere in US";
 
+
 var user = {
     name : "Cynthia",
     age : 31,
@@ -32,3 +33,16 @@ console.log("User ", user)
 
 
 console.log("User2 Age ", user2.age)
+
+
+var user = {
+    name : "Cynthia",
+    age : 31,
+    address : "Somwehre in Colorado"
+}
+
+//console.log("User Object " + user)
+console.log("User Nme " + user.name)
+
+console.log("User "+ JSON.stringify(user))
+console.log("User Objct ", user)

@@ -1,5 +1,6 @@
 // JS is fully functional programming language : Functions are first class member citizens
 
+
 // named function
 function printName(name) {
     console.log(name)
@@ -22,6 +23,14 @@ printFuncExpression("Namrata");
 
 //name("Value") - name is not defined
 
+
+(function ExecuteMe(params) {
+    console.log("My params "+ params)
+})("Estben")
+
+// ExecuteMe("Padmaja")
+// ExecuteMe("Super Hero 1")
+// ExecuteMe("Estben ")
 
 //nesting of functions
 function A(params) {

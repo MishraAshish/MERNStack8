@@ -1,39 +1,37 @@
-//console.log("Hello world from javascript console - node js")
+// BasicsOfJs
+// DataTypes
 
-var session1Name = "MERNStack";
+var ageUniverse = 2525.5266
 
-console.log("session1Name", session1Name)
-console.log("typeof session1Name", typeof session1Name)
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-session1Name = 199.5; //dynamic typing and dynamic casting
+ageUniverse = 2525
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-console.log("session1Name", session1Name)
-console.log("typeof session1Name", typeof session1Name)
+ageUniverse = "Milky Way"
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-session1Name = true
+ageUniverse = {Name : "esteban", Age : 2021} //json object
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-console.log("session1Name", session1Name)
-console.log("typeof session1Name", typeof session1Name)
+ageUniverse = true //boolean //default value is false
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-session1Name = {name: "Some Name", age : "999"} //new Map(); //object
+ageUniverse = null // its type is Object
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-console.log("session1Name", session1Name)
-console.log("typeof session1Name", typeof session1Name)
+ageUniverse = undefined //default value of literals
+console.log("ageUniverse "+ ageUniverse)
+console.log("ageUniverse "+ typeof ageUniverse)
 
-
-session1Name = undefined //default value in javascript
-
-console.log("session1Name", session1Name)
-console.log("typeof session1Name", typeof session1Name)
-
-session1Name = null // datatype is Object
-
-console.log("session1Name", session1Name)
-console.log("typeof session1Name", typeof session1Name)
 
 //symbol data introduced in ES6
-
-
 mySym = Symbol("New Value");
 console.log("Symbol ", mySym);
 console.log("TypeOf Symbol ", typeof mySym);
