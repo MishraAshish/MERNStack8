@@ -2,27 +2,30 @@
 //call stack : LIFO - last in first out
 //call stack visualization upto and extent
 
-// function foo() {
-//     throw new Error("Foo is not a good function"); 
-// }
+function foo() {
+    //console.log("foo called")
+    throw new Error("Foo is not a good function"); 
+}
 
-// function bar(){
-//     foo(); //calling or invoking foo
-// }
+function bar(){
+    //console.log("bar called")
+    foo(); //calling or invoking foo
+}
 
-// function baz(){
-//     bar(); //calling or invoking bar
-// }
+function baz(){
+    //console.log("baz called")
+    bar(); //calling or invoking bar
+}
 
 
-// baz(); //the first entry to callstack
+baz(); //the first entry to callstack
 
 
 
 // blow up the callstack
 
-function blowingUp() {
-    blowingUp()
-}
+// function blowingUp() {
+//     blowingUp()
+// }
 
-blowingUp()
+// blowingUp()
