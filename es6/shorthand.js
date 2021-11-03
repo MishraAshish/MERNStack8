@@ -22,4 +22,5 @@ let animalSoundES5 = {
 //console.log("animalSoundES5 " + animalSoundES5) // [object object] 
 console.log("animalSoundES5 " + JSON.stringify(animalSoundES5)) // casting a json object to string
 
+//AnimalSoundES6.toString() // [object object] 
 console.log("AnimalSoundES6 ", AnimalSoundES6) // es6 automatically does json to stringfy with keys
