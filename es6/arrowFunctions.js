@@ -30,7 +30,7 @@
 let User = {
     name : " Estban",
     age : 20,
-    getDetails :  function() {
+    getDetails :  () => {
         console.log(`Outer Scope - Name ${this.name}  age ${this.age}`)
 
         //bind supplies the context whenever required
