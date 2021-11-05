@@ -24,3 +24,32 @@
 
 // //we can create IIFE as well with arrow functions
 // ((a = 0,b = 0)=>console.log(a+b))(1,1)
+
+//2. making a kind of replacement of bind
+
+let User = {
+    name : " Estban",
+    age : 20,
+    getDetails :  function() {
+        console.log(`Outer Scope - Name ${this.name}  age ${this.age}`)
+
+        //bind supplies the context whenever required
+        setTimeout(function () {
+            console.log(`Settimeout1 Name ${this.name}  age ${this.age}`)    
+        }.bind(this), 1000)
+        console.log(this)
+        let that = this; //
+        setTimeout(function () {
+            console.log(`Settimeout1 -using that Name ${that.name}  age ${that.age}`)    
+        }, 1000)
+
+
+        //copies the context of parent as it is and solves the problem of context resolution
+        setTimeout(() => {
+            console.log(`Settimeout2 Name ${this.name}  age ${this.age}`)
+        }, 2000);
+    }
+}
+
+
+User.getDetails()
