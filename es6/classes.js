@@ -33,3 +33,7 @@ class Vaccination
 
 let mySlot = new Vaccination("Some name", "7th Nov", 2021)
 console.log("mySlot ", mySlot)
+
+// create a class with name calculator, which accepts two params in cnstrctr - should have methods
+// add, subTract, Multiply and divide and some level of validation
+// create functions using arrow only
