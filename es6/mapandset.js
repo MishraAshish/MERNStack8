@@ -29,3 +29,15 @@ myMap.set("array",["sda","asdas"])
 console.log(myMap.size)
 
 //create a map with name student add students, their timezones, session interested as keys
+
+
+//Set : this maintains a set of unique collection with additional properties and methods like map
+
+let StudentSet = new Set(["Wei","Namrta","Esteben","Ciara","Cynthia","Yourui","Padmaja"]);
+
+StudentSet.add("Wei")
+
+console.log(StudentSet.values())
+
+console.log(StudentSet.size)
+console.log(StudentSet.keys())
