@@ -17,6 +17,11 @@
 // }
 // SigninSignUp(AuthenticationFunc, AuthorizationFunc, NavigationFunc)
 
+//Promises : These are the proxy objects that give us a control to check the status of promise and 
+// upon revelant status we also get the type, payload associated with that in response
+// promise will have 3 states - pending, fullfilled/resolved (then), rejected (catch)
+
+
 let lunchPromise = new Promise((resolve, reject)=> {
 
     //lets make a waiting call to server using settimeout
@@ -53,3 +58,13 @@ lunchPromise.then((promise, error)=>{ //what has been happend to the promise // 
 })
 
 console.log(lunchPromise)
+
+// create a promise object with name student on 2 seconds student is pass and set status stating learnt es6
+// then for rejected case set that status - i am progressing
+
+
+
+//
+// authentication call - userid/authorised
+// getuserdetails -
+// getuserCart -
