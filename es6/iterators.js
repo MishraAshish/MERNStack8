@@ -40,7 +40,7 @@ let countSavedByEach = personsList.reduce((prevVal, currVal, index, array)=>{
 
     //prevVal["CaptainAmerica"]
 
-    prevVal[currVal.savedby] = prevVal[currVal.savedby] ? prevVal[currVal.savedby] + 1 : 1
+    prevVal[currVal.savedby] = prevVal[currVal.savedby] ? prevVal[currVal.savedby] + 1 : 1;
 
     return prevVal;
     }, new Set()); //{} [] new Map
