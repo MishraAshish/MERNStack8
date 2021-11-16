@@ -16,12 +16,12 @@ go to any directory where you want to clone and run below
 git clone https://github.com/MishraAshish/MERNStack8.git
 
 To run the node api
-MERNStack5
-cd - nodeapi
+MERNStack8
+cd - node-server
 run  - npm i
 then - npm start
 
-MERNStack5
+MERNStack8
 cd - reactapp
 run  - npm i
 then - npm start
@@ -33,7 +33,7 @@ git clone for the first time
 
 subsequent times we need to run - git pull
 
-http://localhost:9090/getproducts - a get api
+http://localhost:9000/getproducts - a get api
 
 npm init - to initialize the project
 npm install or npm i - to install module dependency
