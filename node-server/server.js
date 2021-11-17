@@ -1,5 +1,7 @@
-const express = require('express')
-const app = express()
+//creating centralized space for 
+const express = require('express') //importing the express class or module
+const app = express() // instantiating express application
+
 const port = 9000;
 
 app.get('/', function (req, res) {
@@ -14,7 +16,7 @@ app.get('/api', function (req, res) {
 })
 
 //seding data in route param
-app.get('/getinfo/:productid/details', function (req, res) {
+app.get('/getinfo/:productid/details', function (req, res) {    
     //http://localhost:9000/getinfo/29/details
     let routeParam = req.params["productid"]; //readin value coming in as request route
     routeParam == 25 ? 
@@ -25,6 +27,15 @@ app.get('/getinfo/:productid/details', function (req, res) {
 
 app.get('/second', function (req, res) {
     res.send('Hello World Second Express API')
+})
+
+// app.get('/new.js', function (req, res) {
+//     res.sendFile(__dirname+"//public//index.html")
+// })
+
+//star or wildcard operartor : we muct put it at last
+app.get('*', function (req, res) {
+    res.sendFile(__dirname+"//public//index.html")
 })
 
 app.listen(port)
