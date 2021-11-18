@@ -1,57 +1,17 @@
-//creating centralized space for 
-const express = require('express') //importing the express class or module
-const app = express() // instantiating express application
-const adminApp = express(); //this application will handle all the request coming with admin in their route path
+const express = require('express'); // imported express module or top level class of express
+const port = 9090;
+const app = express(); //by invoking top level class we are initilizing the application
+const router = require('./route/router');
+const adminRouter = require('./route/adminRouter');
 
-const port = 9000;
+const adminApp = express();
 
-// serve static files like images css using static middleware
-app.use("/static", express.static("public"))
+app.use('/static', express.static('public')); // serve static files like images css using static middle ware
 
-app.get('/', function (req, res) {
-    res.send('Hello World First Express API')
-})
+app.use('/admin', adminApp);
+adminApp.use('/', adminRouter);
 
-app.get('/api', function (req, res) {
-    //passing data using query string : key value pairs that are typed after "?"
-    //http://localhost:9000/api?name=padmaja&session=mernstack
-    let qsObbj = req.query; //query string object as a request
-    res.json(qsObbj)  
-})
+app.use('/', router); // all the requests coming to express app are routed to router.js
 
-//seding data in route param
-app.get('/getinfo/:productid/details', function (req, res) {    
-    //http://localhost:9000/getinfo/29/details
-    let routeParam = req.params["productid"]; //readin value coming in as request route
-    routeParam == 25 ? 
-    res.send("Awsome Product") 
-    :
-    res.send("Product is not available") 
-})
-
-app.get('/second', function (req, res) {
-    res.send('Hello World Second Express API')
-})
-
-// app.get('/new.js', function (req, res) {
-//     res.sendFile(__dirname+"//public//index.html")
-// })
-
-//we are mounting path from main application to other application like (adminApp)
-app.use("/admin", adminApp);
-
-adminApp.get("/verifyuser/:id", (req, res)=>{
-    let paramId = req.params["id"]
-    paramId <100 ? res.send("User is verified by admin!")
-    : res.send("No such user present to verify!")
-})
-
-//star or wildcard operartor : we muct put it at last
-app.get('*', function (req, res) {
-    res.sendFile(__dirname+"//public//index.html")
-})
-
+console.log(`we are listening on port ${port} with url http://localhost:9090`)
 app.listen(port)
-
-console.log(`server is listening on port ${port}`)
-console.log(`api is accessible on http://localhost:${port}`)
