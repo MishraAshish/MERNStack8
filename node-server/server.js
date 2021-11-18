@@ -1,8 +1,12 @@
 //creating centralized space for 
 const express = require('express') //importing the express class or module
 const app = express() // instantiating express application
+const adminApp = express(); //this application will handle all the request coming with admin in their route path
 
 const port = 9000;
+
+// serve static files like images css using static middleware
+app.use("/static", express.static("public"))
 
 app.get('/', function (req, res) {
     res.send('Hello World First Express API')
@@ -32,6 +36,15 @@ app.get('/second', function (req, res) {
 // app.get('/new.js', function (req, res) {
 //     res.sendFile(__dirname+"//public//index.html")
 // })
+
+//we are mounting path from main application to other application like (adminApp)
+app.use("/admin", adminApp);
+
+adminApp.get("/verifyuser/:id", (req, res)=>{
+    let paramId = req.params["id"]
+    paramId <100 ? res.send("User is verified by admin!")
+    : res.send("No such user present to verify!")
+})
 
 //star or wildcard operartor : we muct put it at last
 app.get('*', function (req, res) {
