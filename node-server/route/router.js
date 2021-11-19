@@ -8,13 +8,9 @@ router.get("/first",(req, res)=>{
     })
 })
 
-router.get('/', function (req, res) {
-    res.send('Hello World First Express API')
-})
-
 router.get('/api', function (req, res) {
     //passing data using query string : key value pairs that are typed after "?"
-    //http://localhost:9000/api?name=padmaja&session=mernstack
+    //http://localhost:9090/api?name=padmaja&session=mernstack
     let qsObbj = req.query; //query string object as a request
     res.json(qsObbj)  
 })
@@ -33,6 +29,10 @@ router.get('/second', function (req, res) {
     //console.log("req ", req)
     console.log("res ", res)
     res.send('Hello World Second Express API')
+})
+
+router.get('/', function (req, res) {
+    res.send('Hello World First Express API')
 })
 
 router.get("*",(req, res)=>{
