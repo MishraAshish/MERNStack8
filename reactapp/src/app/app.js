@@ -1,7 +1,10 @@
 //react - everything is component :
 import React, {Component} from "react";
+import "./app.css"
 
+import Header from "./commoncomponents/headerComponent";
 import DummyComponent from "./commoncomponents/dummyComponent";
+import Footer from "./commoncomponents/footerComponent";
 
 export default class AppComponent extends Component {
     constructor(props, context){
@@ -19,16 +22,25 @@ export default class AppComponent extends Component {
             this.setState({
                 time  : (new Date()).toLocaleTimeString()
             })
-        }, 1000);
+        }, 3000);
 
     }
 
+    clickHandler = ()=>{
+        //alert("Button clicked")
+
+        this.setState({
+            time : "No Time to show"
+        })
+    }
+
    render(){
-    
+        let age = 18;
        return( 
            <React.Fragment>
+                <Header/> 
                 <h2>{"This is my AppComponent"}</h2>
-                <button>{"This is the first button"}</button>
+                <button onClick={this.clickHandler}>{"This is the first button"}</button>
                 <br/>
                 <b id="username">{this.userName}</b>
                 <div>{this.state.time}</div>
@@ -39,6 +51,19 @@ export default class AppComponent extends Component {
                     <div>{"First Child HTML"}</div>
                     <div>{"Second Child HTML"}</div>    
                 </DummyComponent>
+                { age >= 18 ? "I am a valid voter " : "Invalid voter"  }
+
+                <div>
+                { age * age }
+                </div>
+                { age + age }
+                <br/>
+                { age - age }
+                <hr/>
+                { age / age }
+                <h1>
+                { 2000 / 10 }</h1>
+                <Footer />
 
            </React.Fragment>           
        )
