@@ -1,8 +1,11 @@
 import React, {Fragment} from "react";
+import {useParams} from "react-router-dom";
 
 
 let About = (props)=>{
-    let param = props.match && props.match.params ? props.match.params["id"] : "No Params"; //reading the param in path /about/:id
+    let params = useParams();    
+    let param = params["id"] ? params["id"]: "No Params"; 
+    
     return(
         <div className="about" >  
             <h2>We promise to support .... </h2>  

@@ -23,6 +23,7 @@ export default class AppComponent extends Component {
                 <Routes>
                     <Route path="/home" element={<Home />} /> 
                     <Route path="/about" element={<About />} />                    
+                    <Route path="/about/:id" element={<About />} />                    
                     
                     <Route path="*" element={<NotFound />} /> 
                 </Routes>
