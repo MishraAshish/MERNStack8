@@ -2,29 +2,31 @@
 import React, {Component} from "react";
 import "./app.css"
 
-import {BrowserRouter as Router, Routes, Redirect, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Redirect, Route} from "react-router-dom";
 
 import Header from "./commoncomponents/headerComponent";
 import DummyComponent from "./commoncomponents/dummyComponent";
 import Footer from "./commoncomponents/footerComponent";
 import Home from "./commoncomponents/homeComponent";
 import NotFound from "./commoncomponents/notFfoundComponent";
+import About from "./commoncomponents/aboutComponent";
 
 export default class AppComponent extends Component {
     constructor(props, context){
         super(props);
     }
 
-    render(){
-        
+    render(){        
        return( 
            <Router>
             <Header /> 
-            <Routes>
-                <Route path="/home" element={<Home/>} /> 
-                <Route path="*" element={<NotFound />} /> 
-           </Routes>
-           <Footer />           
+                <Routes>
+                    <Route path="/home" element={<Home />} /> 
+                    <Route path="/about" element={<About />} />                    
+                    
+                    <Route path="*" element={<NotFound />} /> 
+                </Routes>
+            <Footer />           
            </Router>
        )
    } 
