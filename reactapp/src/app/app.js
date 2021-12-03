@@ -21,7 +21,8 @@ export default class AppComponent extends Component {
            <Router>
             <Header /> 
                 <Routes>
-                    <Route path="/home" element={<Home />} /> 
+                <Route path="/" element={<Home headerName={"HomeComponent from App Component /"} />} /> 
+                    <Route path="/home" element={<Home headerName={"Home from App Component"} />} /> 
                     <Route path="/about" element={<About />} />                    
                     <Route path="/about/:id" element={<About />} />                    
                     
