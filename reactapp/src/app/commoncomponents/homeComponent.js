@@ -2,6 +2,9 @@ import React, {Fragment, PureComponent} from "react";
 import PropTypes from "prop-types";
 import DummyComponent from "./dummyComponent";
 
+//var ObjVehicle = new Vehicle({});
+// ObjVehicle.getDetails(); //details 
+
 export default class Home extends PureComponent{ //has implementation of shuoldComponentUpdate and does comparison of each
 //export default class Home extends React.Component{
 
@@ -26,7 +29,7 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         //view is accessible
         setTimeout(() => {
             this.inputAddress.current.focus();
-            this.inputAddress.current.value = "Added Value";   
+            this.inputAddress.current.value = " Component DidMount";   
             
         }, 3000);
     }
@@ -108,11 +111,21 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         evt.preventDefault();
     }
 
+    //function to be executed by child component to propel the data
+    getDataFromChild = (header)=>{
+
+        //alert("Header value from child "+ header)
+        this.setState({
+            headerNameForChild:header
+        })
+    }
+
     render() {
         console.log("Home Render ")
         return(
             <Fragment>
                 <h1>Header Name - {this.props.headerName}</h1>
+                <h1>Header Name - {this.state.headerNameForChild}</h1>
                 <input type="text" value={this.state.textBoxValue} onChange={this.changeEventHandler} />
 
                 <label>
@@ -129,7 +142,8 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
  
                     <button className={"form-control btn btn-primary col-md-2"} 
                         onClick={this.updateNameEvent}>Update Name</button>
-                <DummyComponent headerName={this.state.headerNameForChild} />
+
+                <DummyComponent headerName={this.state.headerNameForChild} getData={this.getDataFromChild}/>
             </Fragment>
         )
     }

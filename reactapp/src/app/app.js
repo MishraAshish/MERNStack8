@@ -5,7 +5,7 @@ import "./app.css"
 import {BrowserRouter as Router, Routes, Redirect, Route} from "react-router-dom";
 
 import Header from "./commoncomponents/headerComponent";
-import DummyComponent from "./commoncomponents/dummyComponent";
+//import DummyComponent from "./commoncomponents/dummyComponent";
 import Footer from "./commoncomponents/footerComponent";
 import Home from "./commoncomponents/homeComponent";
 import NotFound from "./commoncomponents/notFfoundComponent";
@@ -21,7 +21,7 @@ export default class AppComponent extends Component {
            <Router>
             <Header /> 
                 <Routes>
-                <Route path="/" element={<Home headerName={"HomeComponent from App Component /"} />} /> 
+                    <Route path="/" element={<Home headerName={"HomeComponent from App Component /"} />} /> 
                     <Route path="/home" element={<Home headerName={"Home from App Component"} />} /> 
                     <Route path="/about" element={<About />} />                    
                     <Route path="/about/:id" element={<About />} />                    
