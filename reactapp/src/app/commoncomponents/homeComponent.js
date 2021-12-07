@@ -1,6 +1,7 @@
 import React, {Fragment, PureComponent} from "react";
 import PropTypes from "prop-types";
 import DummyComponent from "./dummyComponent";
+import { useNavigate  } from "react-router-dom"
 
 //var ObjVehicle = new Vehicle({});
 // ObjVehicle.getDetails(); //details 
@@ -13,7 +14,9 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         this.state = {
             headerNameForChild : "Header Name From Home Component",
             textBoxValue : "This is a text box",
-            name : "default Name"
+            name : "default Name",
+            address : "Default Address",
+            age : 66
         }
 
         //ref - keyword uses
@@ -21,6 +24,8 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         //this.inputAddress.current.focus(); //view can't be accessed in constructor
         
         this.inputAge = React.createRef();
+        
+        
     }
 
     //creation life cycle method
@@ -42,13 +47,13 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
 
     //update lifecycle method
     //this asks us to decide whether we need to stop calling the render method on state change
-    // shouldComponentUpdate(nextState, nextProps) {
+    // shouldComponentUpdate(nextProps, nextState) {
     //     console.log("shouldComponentUpdate");
     //     console.log("nextState",nextState);
     //     console.log("nextProps", nextProps);
         
     //     //return true;
-    //     if (nextProps.name == this.state.name) {
+    //     if (nextState.name == this.state.name) {
     //         return false; //to not call the render method
     //     } else {
     //         return true;    
@@ -120,6 +125,24 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         })
     }
 
+    goToAbout = ()=>{
+        let history = useNavigate();
+        history.push("/about");
+    }
+
+    onSubmit = (evt)=>{
+        //alert("Form Submitted!!");
+        let age = this.inputAge.current.value;
+        let address = this.inputAddress.current.value;
+        
+        this.setState({
+            age,
+            address
+        })
+
+        evt.preventDefault();
+    }
+
     render() {
         console.log("Home Render ")
         return(
@@ -127,21 +150,43 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
                 <h1>Header Name - {this.props.headerName}</h1>
                 <h1>Header Name - {this.state.headerNameForChild}</h1>
                 <input type="text" value={this.state.textBoxValue} onChange={this.changeEventHandler} />
-
-                <label>
+                {/* <label>
                     Address:
-                         <input type="text" ref={this.inputAddress} placeholder="Please enter age"/>
-                     </label>
-
+                         <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
+                     </label> */}
 
                 {/* An input form element whose value is controlled by React in this way is called a “controlled component”. */}
                     
-                    <input type="text" placeholder="Please enter your name" 
-                            value={this.state.name} 
-                            onChange={this.changeNameOnType}/>
- 
-                    <button className={"form-control btn btn-primary col-md-2"} 
-                        onClick={this.updateNameEvent}>Update Name</button>
+                <input type="text" placeholder="Please enter your name" 
+                        value={this.state.name} 
+                        onChange={this.changeNameOnType}/>
+                
+                <button className={"form-control btn btn-primary col-md-2"} 
+                    onClick={this.updateNameEvent}>Update Name</button>
+
+                {/* <button className={"form-control btn btn-primary col-md-2"} 
+                    onClick={this.goToAbout}>Go To About</button> */}
+
+                {/* We are going to create an uncontrolled html form with html elements, 
+                it is controlled element values are not going to be part of react state */}
+
+                <form onSubmit={this.onSubmit}>
+                    <label>
+                         Age:
+                         <input type="text" ref={this.inputAge} placeholder="Please enter age"/>
+                    </label>
+                    
+                    <label>
+                         Address:
+                         <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
+                    </label>
+                    <input type="submit" value="Submit" />
+
+                    <label>
+                         Age: {this.state.age}
+                         Address: {this.state.address}
+                    </label>
+                </form>
 
                 <DummyComponent headerName={this.state.headerNameForChild} getData={this.getDataFromChild}/>
             </Fragment>
