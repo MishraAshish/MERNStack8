@@ -1,7 +1,6 @@
 import React, {Fragment, PureComponent} from "react";
 import PropTypes from "prop-types";
 import DummyComponent from "./dummyComponent";
-import { useNavigate  } from "react-router-dom"
 
 //var ObjVehicle = new Vehicle({});
 // ObjVehicle.getDetails(); //details 
@@ -23,8 +22,7 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         this.inputAddress = React.createRef(); //as we dont have any html selectors available in react so this provides a reference to html
         //this.inputAddress.current.focus(); //view can't be accessed in constructor
         
-        this.inputAge = React.createRef();
-        
+        this.inputAge = React.createRef();        
     }
 
     //creation life cycle method
@@ -124,11 +122,6 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
         })
     }
 
-    goToAbout = ()=>{
-        //let history = useNavigate();
-        useNavigate("/about");
-    }
-
     onSubmit = (evt)=>{
         //alert("Form Submitted!!");
         let age = this.inputAge.current.value;
@@ -162,9 +155,6 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
                 
                 <button className={"form-control btn btn-primary col-md-2"} 
                     onClick={this.updateNameEvent}>Update Name</button>
-
-                {/* <button className={"form-control btn btn-primary col-md-2"} 
-                    onClick={()=>useNavigate("/about")}>Go To About</button> */}
 
                 {/* We are going to create an uncontrolled html form with html elements, 
                 it is controlled element values are not going to be part of react state */}
