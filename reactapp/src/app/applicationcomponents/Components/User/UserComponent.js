@@ -5,15 +5,13 @@ export default class User extends Component {
         super(props);
 
         this.state = {
-            userName : "blah blah blah",
-            password : "something",
-            street : "street",
-            mobile : 1212
+            userName : props.user.userName, //this comes from mapStateToProps (user: state.userReducer.user)
+            password : props.user.password,
+            street : props.user.street,
+            mobile : props.user.mobile
         }
 
     }
-
-
 
     onTextChange = (evt)=>{
         let target = evt.target;
@@ -45,7 +43,9 @@ export default class User extends Component {
     }
 
     loginUser = ()=>{
-        alert("we are going to sign in below user - " +JSON.stringify(this.state))
+        //alert("we are going to sign in below user - " +JSON.stringify(this.state))
+        //this.props.addUser(this.state);
+        this.props.signInUpUser(this.state);
     }
 
     render(){
