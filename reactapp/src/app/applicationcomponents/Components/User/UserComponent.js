@@ -91,3 +91,11 @@ export default class User extends Component {
     }
 
 }
+
+ //studentReducer 
+ //actionToSaveStudent 
+ //reactComponent to read data from textboxes 
+ //a container to subscribe from store and publish as well 
+ //combineStudentReducer in store 
+ //exact replica of signinUser
+ //studentRoute and API to save student
