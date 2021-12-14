@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchProducts } from "../../../State/Product/ProductAction";
+import DisplayProductDetails from "./DisplayDetailProduct";
 
 const DisplayProduct = (props)=>{
     const productList = useSelector((state)=>state.productReducer.products)
@@ -19,7 +20,7 @@ const DisplayProduct = (props)=>{
         <>
             {productList && productList.length > 0 ?
                 productList.map((product)=>{
-                    return product.name
+                    return <DisplayProductDetails product={product} key={product._id} />
                 })
                 :
                 <b>{"No Products To Display"}</b>}
