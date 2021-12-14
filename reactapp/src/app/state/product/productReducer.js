@@ -15,8 +15,8 @@ export default function ProductReducer(state=INITIAL_STATE, action)
 {
     switch (action.type) {        
 
-        // case ActionTypes.ADD_PRODUCTS_TOSTORE:            
-        //     return {...state, products:action.payload.productList};
+        case ActionTypes.ADD_PRODUCTS_TOSTORE:            
+            return {...state, products:action.payload.products};
 
         // case ActionTypes.FETCH_PRODUCTS_FULFILLED:            
         //     return {...state, products:action.payload};

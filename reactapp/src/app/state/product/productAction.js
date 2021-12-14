@@ -38,10 +38,15 @@ export const fetchProducts = ()=>{
         .then((productresp)=>{
             console.log("product save response ", productresp);
             //dispatch(loading(false));
-            //dispatch(addProductToStore(productresp));
+            dispatch(addProductToStore(productresp));
         })
         .catch((err)=>{
             console.log("Error While SAving Product", err)
         })
     }  
 }
+
+export const addProductToStore = (products)=>({
+    type : ActionTypes.ADD_PRODUCTS_TOSTORE,
+    payload : {products}
+})
