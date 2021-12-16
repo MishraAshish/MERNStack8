@@ -11,6 +11,7 @@ let Header = (props)=>{
             <hr/>
             <NavLink to="/home" className="button" >Home </NavLink> 
             <NavLink to="/user" className="button" >User </NavLink> 
+            <NavLink to="/cart" className="button" >Cart </NavLink> 
             <NavLink to="/product" className="button" >Product </NavLink> 
             <NavLink to="/about" className="button" >About </NavLink> 
         </>

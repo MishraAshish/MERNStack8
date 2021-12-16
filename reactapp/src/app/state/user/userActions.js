@@ -2,6 +2,7 @@
 //type : action type and payload : object that we want to update in reducer for new state (userObject)
 
 import * as ActionTypes from "../actionTypes";
+import { getUserCart } from "../cart/cartActions";
 
 //action that would be dispatched to the store (eventually to reducer)
 export const addUserToStore = (user) => ({    //user : is the user object dispatched from user component    
@@ -34,7 +35,7 @@ export const signinUser = (userObject)=>{
                 dispatch(action); // it will keep the current context to update the user object and takes it to the reducer
                 
                 //dispatch(loading(false));
-                //dispatch(getUserCart(userresp._id));
+                dispatch(getUserCart(userresp._id));
             })
             .catch((err)=>{
                 console.log("Error While Login", err)

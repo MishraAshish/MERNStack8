@@ -16,6 +16,7 @@ import HookUsage from "./hooks/HookUsage";
 import UserComponent from "./applicationcomponents/Components/User/UserComponentHooks";
 import ProductComponent from "./applicationcomponents/Components/Product/ProductComponent";
 import DisplayProduct from "./applicationcomponents/Components/Product/DisplayProduct";
+import Cart from "./applicationcomponents/Components/Cart/CartComponent";
 
 
 export default class AppComponent extends Component {
@@ -33,6 +34,7 @@ export default class AppComponent extends Component {
                     {/* <Route path="/user" element={<User />} />  */}
                     <Route path="/user" element={<UserComponent />} /> 
                     <Route path="/product" element={<ProductComponent />} /> 
+                    <Route path="/cart" element={<Cart />} /> 
                     <Route path="/displayProd" element={<DisplayProduct />} /> 
                     <Route path="/home" element={<Home headerName={"Home from App Component"} />} /> 
                     <Route path="/about" element={<About />} />           
