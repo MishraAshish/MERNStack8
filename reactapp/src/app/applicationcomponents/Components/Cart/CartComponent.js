@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate }  from "react-router-dom";
 
 import CartItemComponent from "./CartItemComponent";
 import CartSummaryComponent from "./CartSummaryComponent";
@@ -35,6 +36,13 @@ let CartComponent = (props)=>{
         } else {
             dispatchToSaveCart(saveCartToDb(cartlist, id))
         }
+    }
+
+    let navigate = useNavigate();
+    let func = function(event) {      
+        
+        navigate('/checkout');
+        event.preventDefault();
     }
 
     return(
@@ -85,7 +93,7 @@ let CartComponent = (props)=>{
                                     Save For Checkout
                             </button>
                             
-                            <button onClick={() => props.history.push("/checkout")} >
+                            <button onClick={func} >
                                 Go To Checkout
                             </button>
                         </Fragment> 

@@ -383,7 +383,7 @@ optgroup {
   /* background: './images/hm_pic4.jpg' right no-repeat; */
   background-repeat: no-repeat;
   background-position: right;
-  height: 450px;
+  height: 435px;
   width: auto;
   background-color: #046dc9;
   padding: 5px;  
@@ -395,7 +395,7 @@ optgroup {
   padding-top: 10px;
 }
 .loadimage ul li{
-  color: #e2d845f6; 
+  color: #6e096ef6; 
 }
 .loadimage ul li:hover{
   color: #fff; 
