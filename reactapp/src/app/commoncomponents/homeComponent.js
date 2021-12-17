@@ -138,10 +138,26 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
     render() {
         console.log("Home Render ")
         return(
-            <Fragment>
-                <h1>Header Name - {this.props.headerName}</h1>
+            <div className={"loadimage form"} style={{backgroundImage: "url(/images/hm_pic4.jpg)"}}>
+            {/* <p>{this.state.name}</p> */}
+            {/* <img src={"./images/hm_pic4.jpg"} /> */}
+            {/* {this.state.Title} */}
+            <b className="feature">{"Below Feature's We've Implemented in our project :"}</b>
+            <ul>                     
+                <li>Sign up new users</li>
+                <li>Login existing users.</li>
+                <li>Add products/items to create product collection.</li>
+                <li>Allow user's to add to cart.</li>
+                <li>Save the user's cart.</li>
+                <li>Checkout and pay for items.</li>
+                <li>Allow users to cancel the order.</li>
+                <li>Allow users to reorder the cart.</li>
+                <li>Allow users to give ratings to each product.</li>
+                <li>Have notifications on top right with logout.</li>
+            </ul>
+                {/* <h1>Header Name - {this.props.headerName}</h1>
                 <h1>Header Name - {this.state.headerNameForChild}</h1>
-                <input type="text" value={this.state.textBoxValue} onChange={this.changeEventHandler} />
+                <input type="text" value={this.state.textBoxValue} onChange={this.changeEventHandler} /> */}
                 {/* <label>
                     Address:
                          <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
@@ -149,17 +165,17 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
 
                 {/* An input form element whose value is controlled by React in this way is called a “controlled component”. */}
                     
-                <input type="text" placeholder="Please enter your name" 
+                {/* <input type="text" placeholder="Please enter your name" 
                         value={this.state.name} 
                         onChange={this.changeNameOnType}/>
                 
                 <button className={"form-control btn btn-primary col-md-2"} 
-                    onClick={this.updateNameEvent}>Update Name</button>
+                    onClick={this.updateNameEvent}>Update Name</button> */}
 
                 {/* We are going to create an uncontrolled html form with html elements, 
                 it is controlled element values are not going to be part of react state */}
 
-                <form onSubmit={this.onSubmit}>
+                {/* <form onSubmit={this.onSubmit}>
                     <label>
                          Age:
                          <input type="text" ref={this.inputAge} placeholder="Please enter age"/>
@@ -177,8 +193,8 @@ export default class Home extends PureComponent{ //has implementation of shuoldC
                     </label>
                 </form>
 
-                <DummyComponent headerName={this.state.headerNameForChild} getData={this.getDataFromChild}/>
-            </Fragment>
+                <DummyComponent headerName={this.state.headerNameForChild} getData={this.getDataFromChild}/> */}
+            </div>
         )
     }
 }
