@@ -1,3 +1,14 @@
+// Practice : 20/12/2021 
+
+// In the header component we want to show only three navigations - Home, User, About, when user lands on page
+// If user is signed in then only we want to show all the navigations
+// If user is not signed in then we show a banner or message on top - to use Login page to see other features
+// Once user sign in then - Welcome "User Name", to Shopping cart application
+// the user navigation link should say - Login, untill user is signed in
+
+// On product page the signed in user with name - Admin, should only be allowed to add product
+
+
 // Checkout Page - 17/12/2021
 
 // Create A functional component and use react hook or using container to read data from store
@@ -20,18 +31,6 @@
 // Now each Product should have general fields, like Name, Description, Rating, Price, Category (New Product Document/ Collection)
 // In Product component each item when we click to display details should also have a button "Add To Item" on click should add to New Cart
 // On Cart Component, Button for save to Checkout should save the cart item to database (New Cart Document/ Collection)
-
-// Practice : 15/12/2021 
-
-// In the header component we want to show only three navigations - Home, User, About, when user lands on page
-// If user is signed in then only we want to show all the navigations
-// If user is not signed in then we show a banner or message on top - to use Login page to see other features
-// Once user sign in then - Welcome "Margi", to Shopping cart application
-// the user navigation link should say - Login, untill user is signed in
-
-// On product page the signed in user with name - Admin, should only be allowed to add product
-
-
 
 // Practice - 2
 
