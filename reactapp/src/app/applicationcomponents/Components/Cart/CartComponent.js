@@ -11,6 +11,7 @@ let CartComponent = (props)=>{
 
     const cartList = useSelector((state)=>state.cartReducer);
     const User = useSelector((state)=>state.userReducer.user);
+    const loading = useSelector((state)=>state.loadingReducer.loading);
     
     const dispatchToSaveCart = useDispatch();
 
@@ -49,6 +50,9 @@ let CartComponent = (props)=>{
         <Fragment>
         <h1>Cart Component</h1>
         {
+            loading ? <>We are in process!!!!</> : 
+            <>
+            {
             cartList && cartList.length > 0 ?
             <Fragment>
             <table>
@@ -101,6 +105,8 @@ let CartComponent = (props)=>{
 
                 </Fragment>:
             "Not items selected to display in cart"
+            }
+            </>
         }
         </Fragment>
     )

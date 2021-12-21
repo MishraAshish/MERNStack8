@@ -1,3 +1,11 @@
+// Recentorder Page - 21/12/2021
+// Upon MakePayment Click
+// Save the cart to RecentOrders collection (should have userid, order, dateTime)
+// Make API to Save and Fetch from RecentOrders
+// Make a component RecentOrders to Show all previous Orders of current user
+// Add a button to Cancel (like) we have remove in CartComponent and then save again, 
+// order can be cancelled within 2 days after that it should be marked delivered
+
 // Coupon Page - 20/12/2021
 // Create a component with Name - CouponComponent (Functional Component and Use Hooks)
 // On the page add a Button - GenerateCoupon

@@ -17,6 +17,8 @@ import UserComponent from "./applicationcomponents/Components/User/UserComponent
 import ProductComponent from "./applicationcomponents/Components/Product/ProductComponent";
 import DisplayProduct from "./applicationcomponents/Components/Product/DisplayProduct";
 import Cart from "./applicationcomponents/Components/Cart/CartComponent";
+import CheckoutComponent from "./applicationcomponents/Components/Checkout/CheckoutComponent";
+import Coupon from "./applicationcomponents/Components/Coupon/CouponComponent";
 
 
 export default class AppComponent extends Component {
@@ -38,6 +40,8 @@ export default class AppComponent extends Component {
                     <Route path="/displayProd" element={<DisplayProduct />} /> 
                     <Route path="/home" element={<Home headerName={"Home from App Component"} />} /> 
                     <Route path="/about" element={<About />} />           
+                    <Route path="/checkout" element={<CheckoutComponent />} />           
+                    <Route path="/coupon" element={<Coupon />} />           
                     <Route path="/about/:id" element={<About />} />                    
                     
                     <Route path="*" element={<NotFound />} /> 

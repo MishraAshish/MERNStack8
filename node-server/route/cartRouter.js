@@ -28,9 +28,9 @@ router.post("/api/saveUserCart",(req, res)=>{
             if (err) {
                 res.send("Error Occurred"+ err);
             }    
-            //setTimeout(()=>{
+            setTimeout(()=>{
                 res.json(data);
-            //},2000)  
+            },3000)  
             
           });
         }
