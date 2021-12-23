@@ -1,3 +1,27 @@
+
+// Logout : 23/12/2021
+// LogOut : Set up logout button/link on TopRight corner, upon click user should be cleared and back to home
+
+// Review Page - 23/12/2021
+// This should get its reviews from recent orders page
+// User should be allowed to give ratings and his comments to each products
+// Upon successful submission each product should have a link to show its review 
+// When user expands product detail we should also see the button to which will take us to its review
+// on recent order page we can show a popup to submit rating or a new page its up to you //can use -> react bootstrap
+// user should only be able to give rating once cancel button is gone
+
+// Reorder - 23/12/2021
+// User to reorder from recent orders or from cancelled orders
+// A Simple process just add the order to your cart and replace or merge whatever is present in cart
+
+// Upon Cancel Click - 22/12/2021
+// Save the order to CancelledOrders collection (should have userid, cancelled, dateTime)
+// Make API to Save and Fetch from CancelledOrders
+// Make a component CancelledOrders to Show all cancelled Orders of current user in Latest First
+// Add a button to Buy Again, (also show a message - This offer is much more exciting)
+// Upon Adding this should get appended to the existing Cart that is shown in Carts App
+
+
 // Recentorder Page - 21/12/2021
 // Upon MakePayment Click
 // Save the cart to RecentOrders collection (should have userid, order, dateTime)
