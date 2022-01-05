@@ -3,13 +3,14 @@ import React, {Component} from "react";
 import "./app.css"
 
 import {BrowserRouter as Router, Routes, Redirect, Route} from "react-router-dom";
+import Loadable  from "react-loadable";//lazy loading of components with bundle splitting
 
-import Header from "./commoncomponents/headerComponent";
+//import Header from "./commoncomponents/headerComponent";
 //import DummyComponent from "./commoncomponents/dummyComponent";
-import Footer from "./commoncomponents/footerComponent";
-import Home from "./commoncomponents/homeComponent";
+//import Footer from "./commoncomponents/footerComponent";
+//import Home from "./commoncomponents/homeComponent";
 import NotFound from "./commoncomponents/notFfoundComponent";
-import About from "./commoncomponents/aboutComponent";
+//import About from "./commoncomponents/aboutComponent";
 import HookUsage from "./hooks/HookUsage";
 //import User from "./applicationcomponents/Components/User/UserComponent";
 //import User from "./applicationcomponents/Container/UserContainer";
@@ -19,6 +20,36 @@ import DisplayProduct from "./applicationcomponents/Components/Product/DisplayPr
 import Cart from "./applicationcomponents/Components/Cart/CartComponent";
 import CheckoutComponent from "./applicationcomponents/Components/Checkout/CheckoutComponent";
 import Coupon from "./applicationcomponents/Components/Coupon/CouponComponent";
+
+// functional component, used as placeholder
+//when lazy loaded modules delayed
+function Loading() {
+    return (
+        <div>
+            Loading Component in Lazy Manner...
+        </div>
+    )
+}
+
+const Home = Loadable({
+    loader: () => import("./commoncomponents/homeComponent"),
+    loading: Loading,
+});
+
+const Header = Loadable({
+    loader: () => import("./commoncomponents/headerComponent"),
+    loading: Loading,
+});
+
+const Footer = Loadable({
+    loader: () => import("./commoncomponents/FooterComponent"),
+    loading: Loading,
+});
+
+const About = Loadable({
+    loader: () => import("./commoncomponents/AboutComponent"),
+    loading: Loading,
+});
 
 
 export default class AppComponent extends Component {
